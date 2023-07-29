@@ -1,0 +1,23 @@
+<!-- BASE -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+
+</head>
+<body>
+    {% include 'includes/header.html'%}
+
+    <main>
+        {% block content %}
+        <!-- Данные для страницы --Ю
+        {% endblock %}
+    </main>
+
+        {% include 'includes/footer.html'%}
+
+</body>
+</html>

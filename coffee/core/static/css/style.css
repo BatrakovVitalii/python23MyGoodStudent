@@ -1,0 +1,9 @@
+body {
+    background: #fdee77;
+}
+
+header {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 26px;
+}
