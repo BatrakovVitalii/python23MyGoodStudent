@@ -1,6 +1,6 @@
 <!-- HOME -->
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block title%}
 Главная страница - мой сайт
@@ -8,9 +8,26 @@
 
 
 {% block content %}
-<h2>
-    Главная страница, основной контент
-</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet exercitationem laudantium neque rerum voluptas? Dolores earum fugit hic iusto, mollitia obcaecati quas reiciendis sunt vel.
-</p>
+    <div class="container">
+        <h1 class="product__title">Продукты</h1>
+        <div class="products">
+            {% for product in products %}
+            <a href="#" class="product__link">
+                <div class="product__card">
+                    <img src="{% static 'img/product.png' %}" alt="Кофе">
+                    <div class="product__details">
+                        <h3 class="product__title">{{ product.title }}</h3>
+                        <p>{{ product.price }}</p>
+                        <div class="products__count">
+                            <button class="choice__btn minus">-</button>
+                            <input type="text" class="count" value="1">
+                            <button class="choice__btn plus">+</button>
+                        </div>
+                    </div>
+                    <button class="buy">Купить</button>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

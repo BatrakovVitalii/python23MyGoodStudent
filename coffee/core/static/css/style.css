@@ -1,9 +1,164 @@
 body {
-    background: #fdee77;
+    width: 100%;
+
+    font-family: 'serif';
+    font-weight: 500;
+    font-size: 18px;
+
+    color: #eee;
+
 }
 
-header {
-    text-transform: uppercase;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+
+    width: 100%;
+    max-width: 1170px;
+}
+
+/* HEADER
+_________________________*/
+.header {
+    width: 100%;
+
+    background-color: #eee;
+}
+
+.header__inner {
+    height: 110px;
+}
+
+.header__item {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.header__logo {
+    width: 90px;
+    height: 70px;
+}
+
+
+/* NAV
+==========================*/
+
+.product__link, .nav__link {
+
     text-decoration: none;
-    font-size: 26px;
+}
+
+.nav__link {
+    text-transform: uppercase;
+    padding-left: 25px;
+    color: #6F4E37;
+}
+
+.nav__link:first-child {
+    padding-left: 0;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+/* PRODUCTS
+==========================*/
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product__title {
+    text-align: center;
+    color: #000;
+}
+
+
+.product__card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.product__details{
+    text-align: center;
+}
+
+.products__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+}
+
+.choice__btn {
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #ddd;
+
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.count {
+    width: 40px;
+    text-align: center;
+}
+
+.buy {
+    padding: 8px 20px;
+    font-weight: bold;
+    background-color: #ffcc00;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*FOOTER
+===========================*/
+
+.footer {
+    background-color: #eee;
+
+    margin-top: auto;
+    text-align: center;
+}
+
+/* CUSTOM STYLE ALEX
+========================*/
+.profile__title {
+    text-align: center;
+    color: #1fe2ee;
+    text-transform: uppercase;
+
+.profile__name {
+
+}
+
+.profile__email {
+
+}
+
+.proflie__inner {
+
+}
 }

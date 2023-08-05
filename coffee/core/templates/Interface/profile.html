@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Профиль
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1 class="profile__title">Личный кабинет</h1>
+{% for profile in profiles %}
+    <h3 class="profile__name">Имя: {{ profile.name }}</h3>
+    <h3 class="profile__email">Email: {{ profile.email }}</h3>
+    <div class="proflie__inner">
+        <span>История заказов: <button>История заказов</button></span>
+    </div>
+<div/>
+{% endfor %}
+
+
+{% endblock %}

@@ -26,7 +26,7 @@ class Price(models.Model):
     )
 
     def __str__(self):
-        return self.price
+        return str(self.price)
 
     class Meta:
         verbose_name = 'Цена'
@@ -39,7 +39,7 @@ class Volume(models.Model):
     )
     price = models.OneToOneField(
         'Price',
-        verbose_name='ена порции кофе',
+        verbose_name='Цена порции кофе',
         on_delete=models.CASCADE
     )
 
@@ -71,7 +71,7 @@ class Topping(models.Model):
 
 
 class Profile(models.Model):
-    user = models.CharField(
+    name = models.CharField(
         max_length=64,
         verbose_name='Имя'
     )
@@ -85,6 +85,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Профиль'
+        verbose_name_plural = 'Профили'
 
 class Order(models.Model):
     profile = models.ForeignKey(
@@ -111,7 +115,10 @@ class Order(models.Model):
     )
 
     def get_total_price(self):
-       pass
+        try:
+            return self.volume.price.price + self.topping.price.price
+        except AttributeError:
+            return self.volume.price.price
 
     get_total_price.short_description = 'Цена заказа'
 
@@ -121,3 +128,5 @@ class Order(models.Model):
     class Meta:
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
+
+
